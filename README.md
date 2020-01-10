@@ -17,7 +17,8 @@ The author consulted the following resources when building this tutorial:
   * [What Are the Principles](#what-are-the-principles)
   * [Dealing With Messy Data](#dealing-with-messy-data)
     * [Identify Patterns and Brainstorm Solutions](#identify-patterns-and-brainstorm-solutions)
-    * [Data Wrangling Using Excel and OpenRefine](#data-wrangling-using-excel-and-openrefine)
+    * [Data Wrangling Using OpenRefine](#data-wrangling-using-openrefine)
+    * [Data Wrangling Using a Spreadsheet Program](#data-wrangling-using-a-spreadsheet-program)
 - [Workflows for Data Entry](#workflows-for-data-entry)
   * [Survey Versus Spreadsheet](#survey-versus-spreadsheet)
   * [Data Validation](#data-validation)
@@ -114,13 +115,146 @@ Designing spreadsheets that are “tidy, consistent, and as resistant to mistake
   
 The principles are also available as a PDF in this repo.
 
+<blockquote>Q1: What questions do you have about these principles? Which ones are unclear are confusing?</blockquote>
+ 
 ## Dealing With Messy Data
 
+Extract the contents of the `database_lab_data.zip` folder.
 
+Open the `CSC_Database_Lab_Player_Birthplaces.csv` and `CSC_Database_Lab_TeamLocations.csv` files in a spreadsheet program.
 
+Explore both files.
+
+<blockquote>Q2: What fields are represented in these datasets? Describe the data fields in your own words. Use the language of string, double, and integer to describe the data fields.</blockquote>
+
+<table>
+ <tr>
+  <th><Data Type</th>
+  <th>Description</th>
+  <th>Example</th>
+ </tr>
+ <tr>
+  <td>String</td>
+  <td>Used to store text or a string of non-integer characters.</td>
+  <td>"This classroom is in the HSSC" or "student".</td>
+ </tr>
+ <tr>
+  <td>Integer</td>
+  <td>Used to store positive or negative whole numbers.</td>
+  <td>-25, 0, 25</td>
+ </tr>
+ <tr>
+  <td>Double</td>
+  <td>Used to store precise numerical values that include decimal points.</td>
+  <td>3.14159265359</td>
+ </tr>
+ </table>
+ 
+ 
 ### Identify Patterns and Brainstorm Solutions
 
-### Data Wrangling Using Excel and OpenRefine
+Compare what you see in the `CSC_Database_Lab_Player_Birthplaces.csv` and `CSC_Database_Lab_TeamLocations.csv` files to the tidy data principles outlined above.
+
+Start by looking for small-scale discrepencies and inconsistencies within the datasets.
+
+<blockquote>Q3: Provide 3 distinct examples from the sample datasets that do not conform to tidy data principles. Include the example as well as an explanation.</blockquote>
+
+<blockquote>Q4: Discuss with a colleague what issues you are seeing in these datasetes. What commonalities or patterns are you seeing?</blockquote>
+
+<blockquote>Q5: How would you address these pattern errors so the data conforms to tidy data principles? Describe what steps you would take to address at least 3 pattern errors. For each error, include the following elements: an example of the error, an explanation of your method to address the error, and the same example as tidy data.</blockquote>
+
+### Data Wrangling Using OpenRefine
+
+As described in Library Carpentry's ["Introduction to OpenRefine"](https://librarycarpentry.org/lc-open-refine/01-introduction/index.html):
+
+"OpenRefine is described as 'a power tool for working with messy data' ([David Huynh](http://web.archive.org/web/20141021040915/http://davidhuynh.net/spaces/nicar2011/tutorial.pdf)) - but what does this mean? It is probably easiest to describe the kinds of data OpenRefine is good at working with and the sorts of problems it can help you solve.
+
+"OpenRefine is most useful where you have data in a simple tabular format such as a spreadsheet, a comma separated values file (csv) or a tab delimited file (tsv) but with internal inconsistencies either in data formats, or where data appears, or in terminology used. OpenRefine can be used to standardize and clean data across your file. 
+
+"It can help you:
+- Get an overview of a data set
+- Resolve inconsistencies in a data set, for example standardizing date formatting
+- Help you split data up into more granular parts, for example splitting up cells with multiple authors into separate cells
+- Match local data up to other data sets, for example in matching local subjects against the Library of Congress Subject Headings
+- Enhance a data set with data from other sources
+
+"Some common scenarios where you might use OpenRefine include:
+- Where you want to know how many times a particular value (name, publisher, subject) appears in a column in your data
+- Where you want to know how values are distributed across your whole data set
+- Where you have a list of dates which are formatted in different ways, and want to change all the dates in the list to a single common date format." 
+
+#### Installing and Loading Data in OpenRefine
+
+[INSTRUCTIONS FOR INSTALLING OPENREFINE ON RASPBERRY PI]
+
+[IMAGE_a]
+
+Launch OpenRefine.
+
+Click `Create Project` from the menu on the left-hand side. 
+
+Select the option to `Get data from This Computer.`
+
+Select `CSC_Database_Lab_Player_Birthplaces.csv` file.
+
+Click `Next.`
+
+[IMAGE 1]
+
+You now have a variety of configuration options before creating your project in OpenRefine.
+
+Select an appropriate character encoding schema.
+
+Select the option to `Parse next 1 line(s) as column headers.` This option treats the first row of your file as a table header.
+
+Check to be sure the `Parse cell text into numbers, dates, ...` option is NOT selected. 
+
+In the `Project name` window, name your project. 
+
+Click `Create Project >>` to begin to work with your data as an OpenRefine project. 
+
+#### OpenRefine's Layout
+
+As described in Library Carpentry's ["Introduction to OpenRefine"](https://librarycarpentry.org/lc-open-refine/01-introduction/index.html):
+
+"OpenRefine displays data in a tabular format. Each row will usually represent a ‘record’ in the data, while each column represents a type of information. This is very similar to how you might view data in a spreadsheet or database. As with a spreadsheet, the individual bits of data live in ‘cells’ at the intersection of a row and a column.
+
+"OpenRefine only displays a limited number of rows of data at one time. You can adjust the number choosing between 5, 10 (the default), 25 and 50 at the top left of the table of data. You can navigate through the records by using the previous/next/first/last navigation options at the top right of the table of data."
+
+#### Faceting and Filtering
+
+As described in Library Carpentry's ["Introduction to OpenRefine"](https://librarycarpentry.org/lc-open-refine/01-introduction/index.html):
+
+"Facets are one of the most useful features of OpenRefine and can help in both getting an overview of the data and to improve the consistency of the data.
+
+"A ‘Facet’ groups all the values that appear in a column, and then allows you to filter the data by these values and edit values across many records at the same time.
+
+"The simplest type of Facet is called a ‘Text facet’. This simply groups all the text values in a column and lists each value with the number of records it appears in. The facet information always appears in the left hand panel in the OpenRefine interface.
+
+"To create a Text Facet for a column, click on the drop down menu at the top of the publisher column and choose `Facet -> Text Facet`. The facet will then appear in the left hand panel.
+
+"The facet consists of a list of values used in the data. You can filter the data displayed by clicking on one of these headings.
+
+"You can include multiple values from the facet in a filter at one time by using the `Include` option which appears when you put your mouse over a value in the Facet.
+
+"You can also invert the filter to show all records which do not match your selected values. This option appears at the top of the Facet panel when you select a value from the facet to apply as a filter."
+
+[IMAGE]
+
+
+Select the drop-down arrow for one of the columns that contains a pattern error.
+
+Select `Facet > Text Facet`. 
+
+The facet will now appear on the left-hand side of the page.
+
+Click a line in the facet to select rows with that value.
+
+Use the `Include` option to select multiple values.
+
+<blockquote>Q6: 
+ 
+### Data Wrangling Using A Spreadsheet Program
 
 # Workflows for Data Entry
 
