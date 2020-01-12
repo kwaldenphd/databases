@@ -23,31 +23,22 @@ The author consulted the following resources when building this tutorial:
 - [Workflows for Data Entry](#workflows-for-data-entry)
   * [Survey Versus Spreadsheet](#survey-versus-spreadsheet)
   * [Data Validation](#data-validation)
-- [Data Structure Fundamentals](#data-structure-fundamentals)
+- [Understanding Relational Databases](#understanding-relational-databases)
+  * [Why A Database?](#why-a-database)
   * [What is an ERD?](#what-is-an-erd)
-    * [Entities](#entities)
-    * [Attributes](#attributes)
-    * [Relationships](#relationships)
-  * [Developing a Data Structure](#developing-a-data-structure)
-- [Building a Database](#building-a-database)
-  * [Types of Databases]
-    * [Flat File](#flat-file)
-    * [Relational](#relational)
-    * [Object Oriented](#object-oriented)
-  * [Where Are My Keys?](#where-are-my-keys)
-  * [Joins](#joins)
-    * [Inner](#inner)
-    * [Outer](#outer)
-      * [Left Outer](#left-outer)
-      * [Right Outer](#right-outer)
-      * [Full Outer](#full-outer)
-    * [Cross](#cross)
-    * [Self-Join](#self-join)
+    ** [Entities](#entities)
+    ** [Attributes](#attributes)
+    ** [Relationships](#relationships)
+    ** [Cardinality](#cardinality)
+  * [Building an ERD](#building-an-erd)
+    ** [Where Are My Keys?](#where-are-my-keys)
+    ** [Relational Schema](#relational-schema)
 - [SQL Query Syntax](#sql-query-syntax)
   * [Selecting and Sorting](#selecting-and-sorting)
   * [Filtering](#filtering)
   * [Aggregating and Calculating](#aggregating-and-calculating)
-  * [Key Terms](#key-terms)
+  * [Joins](#joins)
+- [Optional: Relational Databases in Excel Using PivotTables](#optional-relational-databases-in-excel-using-pivottables)
 - [Additional Resources](#additional-resources)
 - [Lab Notebook Questions](#lab-notebook-questions)
 
@@ -205,7 +196,7 @@ As described in Library Carpentry's ["Introduction to OpenRefine"](https://libra
 
 [INSTRUCTIONS FOR INSTALLING OPENREFINE ON RASPBERRY PI]
 
-[IMAGE_a]
+<p align="center"><img class=" size-full wp-image-55 aligncenter" src="https://github.com/kwaldenphd/databases/blob/master/screenshots/Image_a.png?raw=true" alt="Capture_2"  /></p>
 
 Launch OpenRefine.
 
@@ -217,7 +208,7 @@ Select `CSC_Database_Lab_Player_Birthplaces.csv` file.
 
 Click `Next.`
 
-[IMAGE 1]
+<p align="center"><img class=" size-full wp-image-55 aligncenter" src="https://github.com/kwaldenphd/databases/blob/master/screenshots/Image_1.png?raw=true" alt="Capture_2"  /></p>
 
 You now have a variety of configuration options before creating your project in OpenRefine.
 
@@ -233,7 +224,7 @@ Click `Create Project >>` to begin to work with your data as an OpenRefine proje
 
 #### OpenRefine's Layout
 
-[IMAGE]
+<p align="center"><img class=" size-full wp-image-55 aligncenter" src="https://github.com/kwaldenphd/databases/blob/master/screenshots/Image_2.png?raw=true" alt="Capture_2"  /></p>
 
 As described in Library Carpentry's ["Introduction to OpenRefine"](https://librarycarpentry.org/lc-open-refine/01-introduction/index.html):
 
@@ -259,13 +250,13 @@ As described in Library Carpentry's ["Introduction to OpenRefine"](https://libra
 
 "You can also invert the filter to show all records which do not match your selected values. This option appears at the top of the Facet panel when you select a value from the facet to apply as a filter."
 
-[IMAGE]
+<p align="center"><img class=" size-full wp-image-55 aligncenter" src="https://github.com/kwaldenphd/databases/blob/master/screenshots/Image_3.png?raw=true" alt="Capture_2"  /></p>
 
 Select the drop-down arrow for one of the columns that contains a pattern error.
 
 Select `Facet > Text Facet`. 
 
-[IMAGE]
+<p align="center"><img class=" size-full wp-image-55 aligncenter" src="https://github.com/kwaldenphd/databases/blob/master/screenshots/Image_4.png?raw=true" alt="Capture_2"  /></p>
 
 The facet will now appear on the left-hand side of the page.
 
@@ -279,7 +270,7 @@ Do this for other pattern errors. Consult [the key for ISO 3166-1 alpha-2 two-le
 
 #### Exporting from OpenRefine
 
-[IMAGE]
+<p align="center"><img class=" size-full wp-image-55 aligncenter" src="https://github.com/kwaldenphd/databases/blob/master/screenshots/Image_6.png?raw=true" alt="Capture_2"  /></p>
 
 Click on the `Export` button in the top right-hand corner and select the option to export your OpenRefine project as a CSV file. 
 
@@ -315,11 +306,15 @@ Open a blank Microsoft Excel file.
 
 Save the blank file as an Excel workbook.
 
+<p align="center"><img class=" size-full wp-image-55 aligncenter" src="https://github.com/kwaldenphd/databases/blob/master/screenshots/Image_7.png?raw=true" alt="Capture_2"  /></p>
+
 Click on Data in the top menu bar.
 
 Under `Get External Data` select the `From Text` option.
 
 In `Sheet1`, select the `CSC_Database_Lab_PlayerBirthplaces.csv` file.
+
+<p align="center"><img class=" size-full wp-image-55 aligncenter" src="https://github.com/kwaldenphd/databases/blob/master/screenshots/Image_8.png?raw=true" alt="Capture_2"  /></p>
 
 In the pop-up window, choose the `Delimited` option. Because we are importing a `csv` file, our fields are separated by a comma. In this case, the comma is our delimiter.
 
@@ -327,19 +322,27 @@ Select the `My data has headers.` option.
 
 Click `Next`.
 
+<p align="center"><img class=" size-full wp-image-55 aligncenter" src="https://github.com/kwaldenphd/databases/blob/master/screenshots/Image_9.png?raw=true" alt="Capture_2"  /></p>
+
 In the next window (Step 2 of 3), select `Comma` as your delimiter. 
 
 Check the `Data preview` window.
 
 Click `Next`.
 
+<p align="center"><img class=" size-full wp-image-55 aligncenter" src="https://github.com/kwaldenphd/databases/blob/master/screenshots/Image_10.png?raw=true" alt="Capture_2"  /></p>
+
 In Step 3 of 3, select `General` for `Column data format`.
 
 Click `Finish`.
 
+<p align="center"><img class=" size-full wp-image-55 aligncenter" src="https://github.com/kwaldenphd/databases/blob/master/screenshots/Image_11.png?raw=true" alt="Capture_2"  /></p>
+
 In the `Import Data` window, you can tell the program where to import the new data.
 
 Click `OK`.
+
+<p align="center"><img class=" size-full wp-image-55 aligncenter" src="https://github.com/kwaldenphd/databases/blob/master/screenshots/Image_12.png?raw=true" alt="Capture_2"  /></p>
 
 You should now see the CSV data in the Excel workbook.
 
@@ -351,25 +354,23 @@ Save the updated workbook.
 
 #### Creating a Table
 
-[IMAGE]
+<p align="center"><img class=" size-full wp-image-55 aligncenter" src="https://github.com/kwaldenphd/databases/blob/master/screenshots/Image_13.png?raw=true" alt="Capture_2"  /></p>
 
 Now we need to convert the sheets in our workbook to tables so we can search, sort, and filter.
 
-[IMAGE]
+<p align="center"><img class=" size-full wp-image-55 aligncenter" src="https://github.com/kwaldenphd/databases/blob/master/screenshots/Image_14.png?raw=true" alt="Capture_2"  /></p>
 
 Select all the cells that contain data.
 
 <blockquote>One shortcut is to select cell A1, then press <Control> <Shift> and the right arrow key to select all columns with data. Then <Control> <Shift> and the down arrow key to select all rows with data.</blockquote>
  
-[IMAGE]
+<p align="center"><img class=" size-full wp-image-55 aligncenter" src="https://github.com/kwaldenphd/databases/blob/master/screenshots/Image_15.png?raw=true" alt="Capture_2"  /></p>
  
 Click `Insert` in the top menu bar.
  
-[IMAGE]
- 
 Select `Table` under `Insert` to insert a table.
  
-[IMAGE]
+<p align="center"><img class=" size-full wp-image-55 aligncenter" src="https://github.com/kwaldenphd/databases/blob/master/screenshots/Image_16.png?raw=true" alt="Capture_2"  /></p>
  
 In the pop-up window, we have already selected the cells with data. `=$A$1:$I$3616` is an expression that selects selects column A through column I and row 1 through row 3616.
  
@@ -377,21 +378,23 @@ Select the `My table has headers` option.
  
 Click `OK`.
  
-[IMAGE]
+<p align="center"><img class=" size-full wp-image-55 aligncenter" src="https://github.com/kwaldenphd/databases/blob/master/screenshots/Image_17.png?raw=true" alt="Capture_2"  /></p>
  
 We have now converted the data in our sheet to a table.
 
 #### Editing Data
  
-[IMAGE]
+<p align="center"><img class=" size-full wp-image-55 aligncenter" src="https://github.com/kwaldenphd/databases/blob/master/screenshots/Image_18.png?raw=true" alt="Capture_2"  /></p>
  
-[IMAGE]
+<p align="center"><img class=" size-full wp-image-55 aligncenter" src="https://github.com/kwaldenphd/databases/blob/master/screenshots/Image_19.png?raw=true" alt="Capture_2"  /></p>
  
 Click the drop-down arrow next to a column header to see additional options for that field.
  
 Use these sort, search, and filter options to address data pattern errors.
  
-[IMAGE]
+<p align="center"><img class=" size-full wp-image-55 aligncenter" src="https://github.com/kwaldenphd/databases/blob/master/screenshots/Image_20.png?raw=true" alt="Capture_2"  /></p>
+
+<p align="center"><img class=" size-full wp-image-55 aligncenter" src="https://github.com/kwaldenphd/databases/blob/master/screenshots/Image_21.png?raw=true" alt="Capture_2"  /></p>
  
 Alternatively, use the `Replace` option under `Find & Select` (in the `Home` menu section) to address pattern errors.
  
@@ -405,7 +408,7 @@ Go through this same process for the second sheet with data from the `Team_Locat
 
 We will save the combined CSV files as an Excel workbook to use later in this lab.
 
-[IMAGE]
+<p align="center"><img class=" size-full wp-image-55 aligncenter" src="https://github.com/kwaldenphd/databases/blob/master/screenshots/Image_22.png?raw=true" alt="Capture_2"  /></p>
 
 Click on the `File` menu section to show additional export options.
 
@@ -429,11 +432,13 @@ Building in quality assurance constraints into a data entry workflow can help mi
 
 One option is use a survey with some pre-defined choices or drop-down options.
 
-[IMAGE]
+<p align="center"><img class=" size-full wp-image-55 aligncenter" src="https://github.com/kwaldenphd/databases/blob/master/screenshots/Image_23.png?raw=true" alt="Capture_2"  /></p>
+
+<p align="center"><img class=" size-full wp-image-55 aligncenter" src="https://github.com/kwaldenphd/databases/blob/master/screenshots/Image_24.png?raw=true" alt="Capture_2"  /></p>
 
 Log into your Grinnell OFfice 365 account.
 
-[IMAGE]
+<p align="center"><img class=" size-full wp-image-55 aligncenter" src="https://github.com/kwaldenphd/databases/blob/master/screenshots/Image_25.png?raw=true" alt="Capture_2"  /></p>
 
 Select the Microsoft Forms app.
 
@@ -447,13 +452,13 @@ Explore the different question types.
 
 You can also use some of the built-in data validation options in Excel.
 
-[IMAGE]
+<p align="center"><img class=" size-full wp-image-55 aligncenter" src="https://github.com/kwaldenphd/databases/blob/master/screenshots/Image_26.png?raw=true" alt="Capture_2"  /></p>
 
-[IMAGE]
+<p align="center"><img class=" size-full wp-image-55 aligncenter" src="https://github.com/kwaldenphd/databases/blob/master/screenshots/Image_27.png?raw=true" alt="Capture_2"  /></p>
 
 Under `Data`, select the `Data Validation` option.
 
-[IMAGE]
+<p align="center"><img class=" size-full wp-image-55 aligncenter" src="https://github.com/kwaldenphd/databases/blob/master/screenshots/Image_28.png?raw=true" alt="Capture_2"  /></p>
 
 In the pop-up window, you can limit the  types of values that will be valid in a particular field. 
 
@@ -473,7 +478,7 @@ Open the `CSC_Datbase_Lab_Transactions.csv` file in a spreadsheet program.
 
 <blockquote>Q12: What types of fields do you see in the Transactions table? What kinds of connections could you see across these three tables?</blockquote>
 
-Let's say we wanted to see how many baseball players born in Puerto Rico played for teams located in the state of New York.
+Let's say we wanted to see how many baseball players born in Puerto Rico played for teams located in the state of Iowa.
 
 The `Player_Birthplaces` table includes information about where players were born. The `Team_Locations` table includes information about where teams are located. The `Transactions` table tells us which players played for which teams.
 
@@ -482,6 +487,10 @@ But the `Transactions` table on its own doesn't include the information about pl
 We could add that location information to the `Transactions` table, but we would end up with significant redundant and duplicate information.
 
 Behold the magic of relational databases.
+
+<p align="center"><img class=" size-full wp-image-55 aligncenter" src="https://github.com/kwaldenphd/databases/blob/master/screenshots/Image_29.png?raw=true" alt="Capture_2"  /></p>
+
+Image from Library Carpentry's [Introduction to SQL tutorial](https://librarycarpentry.org/lc-sql/01-introduction/index.html).
 
 As described in Library Carpentry's [Introduction to SQL tutorial](https://librarycarpentry.org/lc-sql/01-introduction/index.html), "Relational databases consist of one or more tables of data. These tables have fields (columns) and records (rows). Every field has a data type. Every value in the same field of each record has the same type. These tables can be linked to each other when a field in one table can be matched to a field in another table."
 
@@ -568,7 +577,7 @@ Types of cardinality:
 
 The three main cardinal relationships are one-to-one, one-to-many, and many-many. A one-to-one example would be one student associated with one mailing address. A one-to-many example (or many-to-one, depending on the relationship direction): One student registers for multiple courses, but all those courses have a single line back to that one student. Many-to-many example: Students as a group are associated with multiple faculty members, and faculty members in turn are associated with multiple students.
 
-[IMAGE 30]
+<p align="center"><img class=" size-full wp-image-55 aligncenter" src="https://github.com/kwaldenphd/databases/blob/master/screenshots/Image_30.png?raw=true" alt="Capture_2"  /></p>
 
 Cardinality is indicated through symbols added to the connecting lines of a relationship.
 
@@ -596,7 +605,7 @@ These unique identifiers and matching fields are called keys.
 
 "A foreign key is a column or a set of columns in one table that references the primary key columns in another table." (["Primary Key-Foreign Key Relationships,"](https://docs.oracle.com/cd/E12100_01/books/admintool/admintool_DataModeling4.html), Oracle)
 
-[IMAGE 31]
+<p align="center"><img class=" size-full wp-image-55 aligncenter" src="https://github.com/kwaldenphd/databases/blob/master/screenshots/Image_31.png?raw=true" alt="Capture_2"  /></p>
 
 Image from ["Foreign and Primary Key Differences (Visually Explained),"](https://www.essentialsql.com/what-is-the-difference-between-a-primary-key-and-a-foreign-key/) EssentialSQL.
 
@@ -610,7 +619,7 @@ But, we might also want to represent our database structure based on tables, pri
 
 An image from StackExchange's ["ER vs database schema diagrams" page](https://dba.stackexchange.com/questions/119380/er-vs-database-schema-diagrams) that illustrates the difference:
 
-[IMAGE 32]
+<p align="center"><img class=" size-full wp-image-55 aligncenter" src="https://github.com/kwaldenphd/databases/blob/master/screenshots/Image_c.png?raw=true" alt="Capture_2"  /></p>
 
 <blockquote>Q19: Work with a colleague to build a relational schema for a relational database that includes the Player_Birthplaces, Team_Locations, and Transactions tables. Include your diagram as well as an explanation of your process.</blockquote>
 
@@ -710,7 +719,7 @@ WHERE dob>1996;
 
 This query returns all columns from `Player_Birthplaces` where data in the `dob` field is greater than `1996`.
 
-[IMAGE 42]
+<p align="center"><img class=" size-full wp-image-55 aligncenter" src="https://github.com/kwaldenphd/databases/blob/master/screenshots/Image_42.png?raw=true" alt="Capture_2"  /></p>
 
 List of operators that can be used in a `WHERE` clause (from W3Schools ["SQL Where Clause" tutorial](https://www.w3schools.com/sql/sql_where.asp)).
 
@@ -773,29 +782,29 @@ Load the `Transactions` file in a new sheet.
 
 Now you should have three sheets in the same Excel workbook.
 
-[IMAGE 33]
+<p align="center"><img class=" size-full wp-image-55 aligncenter" src="https://github.com/kwaldenphd/databases/blob/master/screenshots/Image_33.png?raw=true" alt="Capture_2"  /></p>
 
 Under the `Data` menu area, select the `Relationships` option.
 
-[IMAGE 34]
+<p align="center"><img class=" size-full wp-image-55 aligncenter" src="https://github.com/kwaldenphd/databases/blob/master/screenshots/Image_34.png?raw=true" alt="Capture_2"  /></p>
 
 In the `Manage Relationships` window, select `New`.
 
-[IMAGE 35]
+<p align="center"><img class=" size-full wp-image-55 aligncenter" src="https://github.com/kwaldenphd/databases/blob/master/screenshots/Image_35.png?raw=true" alt="Capture_2"  /></p>
 
 Use the relational schema you built in Q19 to create relationships across the three tables.
 
-[IMAGE 36]
+<p align="center"><img class=" size-full wp-image-55 aligncenter" src="https://github.com/kwaldenphd/databases/blob/master/screenshots/Image_36.png?raw=true" alt="Capture_2"  /></p>
 
 Once you've added relationships, close the `Manage Relationships` window.
 
 Save your workbook.
 
-[IMAGE 37]
+<p align="center"><img class=" size-full wp-image-55 aligncenter" src="https://github.com/kwaldenphd/databases/blob/master/screenshots/Image_37.png?raw=true" alt="Capture_2"  /></p>
 
 Select the `Manage Data Model` option under `Data`.
 
-[IMAGE 38]
+<p align="center"><img class=" size-full wp-image-55 aligncenter" src="https://github.com/kwaldenphd/databases/blob/master/screenshots/Image_38.png?raw=true" alt="Capture_2"  /></p>
 
 You can select the `Diagram View` option to see the relational schema you have built in Excel.
 
@@ -803,17 +812,17 @@ Close the Power Pivot window.
 
 Create a new blank sheet.
 
-[IMAGE 39]
+<p align="center"><img class=" size-full wp-image-55 aligncenter" src="https://github.com/kwaldenphd/databases/blob/master/screenshots/Image_39.png?raw=true" alt="Capture_2"  /></p>
 
 Select `PivotTable` under `Insert`.
 
-[IMAGE 40]
+<p align="center"><img class=" size-full wp-image-55 aligncenter" src="https://github.com/kwaldenphd/databases/blob/master/screenshots/Image_40.png?raw=true" alt="Capture_2"  /></p>
 
 In the `Create PivotTable` window, select the option to `Use this workbook's Data Model` and select the `Existing Worksheet` for the PivotTable location.
 
 Click `OK`.
 
-[IMAGE 41]
+<p align="center"><img class=" size-full wp-image-55 aligncenter" src="https://github.com/kwaldenphd/databases/blob/master/screenshots/Image_41.png?raw=true" alt="Capture_2"  /></p>
 
 You are now in the PivotTable interface where you can select data fields across tables using the relationships and data model.
 
@@ -831,3 +840,59 @@ You are now in the PivotTable interface where you can select data fields across 
 - [Lucid Chart "ER Diagrams"](https://www.lucidchart.com/pages/er-diagrams)
 
 # Lab Notebook Questions
+
+Q1: What questions do you have about these principles? Which ones are unclear are confusing?
+   
+Q2: What fields are represented in these datasets? Describe the data fields in your own words. Use the language of string, double, and integer to describe the data fields.
+    
+Q3: Provide 3 distinct examples from the sample datasets that do not conform to tidy data principles. Include the example as well as an explanation.
+
+Q4: Discuss with a colleague what issues you are seeing in these datasetes. What commonalities or patterns are you seeing?
+
+Q5: How would you address these pattern errors so the data conforms to tidy data principles? Describe what steps you would take to address at least 3 pattern errors. For each error, include the following elements: an example of the error, an explanation of your method to address the error, and the same example as tidy data.
+    
+Q6: Compare your experience working in OpenRefine to other experiences you have had in a text editor or spreadsheet program. In what ways do you understand, perceive, or relate to the data differently through working in OpenRefine? Describe your experience cleaning this data in OpenRefine.
+
+Q7: Describe a past experience working with a spreadsheet program. What were you trying to do? How did it go? What was your overall feeling about working with data in a spreadsheet program?
+
+Q8: Compare your experience working in Excel to your experience working in OpenRefine. In what ways do you understand, perceive, or relate to the data differently through working in Excel? Describe your experience cleaning this data in Excel.
+
+Q9: For the baseball datasets we have been working with in this lab, what do you think may have contributed to or caused the pattern errors we needed to address? How could these pattern errors be addressed in the data entry process?
+
+Q10: Describe how you would go about building a survey form or template for the `CSC_Database_Lab_PlayerBirthplaces.csv` file. You DO NOT need to actually create or submit a survey form. Describe what types of questions and pre-defined question or field options could you use to more effectively generate the data in this file.
+
+Q11: Describe how you would go about using data validation to build a template for the `CSC_Database_Lab_PlayerBirthplaces.csv` file. You DO NOT need to actually create or submit a template. Describe what data validation options and pre-defined field options could you use to more effectively generate the data in this file.
+
+Q12: What types of fields do you see in the Transactions table? What kinds of connections could you see across these three tables?
+
+Q13: What entities are in the Player_Birthplaces, Team_Locations, and Transactions tables? List the entitites by table and include some explanation of your thought process. If you're getting stuck, try describing the data included in each table using a sentence. Where are the nouns in each sentence?
+
+Q14: What attributes are in the Player_Birthplaces, Team_Locations, and Transactions tables? What entities do these attributes describe? List the attributes by entity and table and include some explanation of your thought process. If you're getting stuck, go back to your list of entities from Q13. What non-entity information in each table might describe an entity?
+
+Q15: What relationships do you see within and across entities in the Player_Birthplaces, Team_Locations, and Transactions tables? What entities do these relationships connect? Include some explanation of your thought process. If you're getting stuck, go back to your list of entities from Q13. How do these entities connect?
+
+Q16: Include the cardinality for the relationships you identified in Q15. Include some explanation of your thought process.
+
+Q17: Work with a colleague to build an ERD for the Player_Birthplaces, Team_Locations, and Transactions tables. Include your diagram as well as an explanation of your process.
+
+Q18: What fields in our tables are functioning as keys? Which ones are primary keys and which ones are foreign keys? Include some explanation of your thought process.
+
+Q19: Work with a colleague to build a relational schema for a relational database that includes the Player_Birthplaces, Team_Locations, and Transactions tables. Include your diagram as well as an explanation of your process.
+
+Q20: How would you write an SQL query to select the list of player ids and birthplace countries from the Player_Birthplaces table? What data does this query return?
+
+Q21: How would you write an SQL query to return the unique list of player birthplace countries from the Player_Birthplaces table? What data does this query return?
+ 
+Q22: How would you write an SQL query to return the unique list of team names from the Team_Locations table, sorted in reverse alphabetical order? What data does this query return?
+  
+Q23: How would you write an SQL query to return the data from the Player_Birthplaces table, sorted in chronological order by birth year and reverse alphabetical order by country? What data does this query return?
+   
+Q24: How would you write an SQL query to return the data from the Team_Locations table for teams located in states that start with the letter M? What data does this query return?
+   
+Q25: How would you write an SQL query that joins the Transactions and Team_Locations tables and returns all columns? What data does this query return?
+    
+Q26: Where would you start in writing an SQL query that answers our question about the number of players born in Puerto Rico playing for teams located in Iowa?
+
+Q27: How would you describe the affordances of relational databases to someone who hasn't been through this lab?
+
+Q28: What questions or thoughts do you have about building and interacting with relational databases?
