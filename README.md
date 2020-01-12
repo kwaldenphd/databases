@@ -194,7 +194,21 @@ As described in Library Carpentry's ["Introduction to OpenRefine"](https://libra
 
 #### Installing and Loading Data in OpenRefine
 
-6- [INSTRUCTIONS FOR INSTALLING OPENREFINE ON RASPBERRY PI]
+6- Navigate to https://github.com/OpenRefine/OpenRefine/releases/ and download https://github.com/OpenRefine/OpenRefine/releases/download/3.3-rc1/openrefine-linux-3.3-rc1.tar.gz. 
+
+  a- Open the terminal, navigate to the `Downloads` folder.
+
+  b- Use the following command to install the program.
+
+```
+tar xzf openrefine-linux-2.7.tar.gz
+cd openrefine-2.7
+./refine
+```  
+
+  c- Substitute the relevant version and release numbers.
+  
+  d- If you are getting memory-related error messages, visit https://github.com/OpenRefine/OpenRefine/wiki/FAQ%3A-Allocate-More-Memory#linux-or-mac to troubleshoot.
 
 <p align="center"><img class=" size-full wp-image-55 aligncenter" src="https://github.com/kwaldenphd/databases/blob/master/screenshots/Image_a.png?raw=true" alt="Capture_2"  /></p>
 
