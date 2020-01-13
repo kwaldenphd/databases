@@ -44,11 +44,15 @@ The author consulted the following resources when building this tutorial:
 
 # Tidy Data Principles
 
-Hadley Wickham's 2014 article in the *Journal of Statistical Software* outlines the foundations and principles of tidy data. Article abstract: "A huge amount of effort is spent cleaning data to get it ready for analysis, but there has been little research on how to make data cleaning as easy and effective as possible. This paper tackles a small, but important, component of data cleaning: data tidying. Tidy datasets are easy to manipulate, model and visualize, and have a specific structure: each variable is a column, each observation is a row, and each type of observational unit is a table. This framework makes it easy to tidy messy datasets because only a small set of tools are needed to deal with a wide range of un-tidy datasets. This structure also makes it easier to develop tidy tools for data analysis, tools that both input and output tidy datasets. The advantages of a consistent data structure and matching tools are demonstrated with a case study free from mundane data manipulation chores." (Hadley Wickham, Tidy Data, Vol. 59, Issue 10, Sep 2014, Journal of Statistical Software. http://www.jstatsoft.org/v59/i10.)
+Hadley Wickham's 2014 article in the *Journal of Statistical Software* outlines the foundations and principles of tidy data. 
+
+Article abstract: "A huge amount of effort is spent cleaning data to get it ready for analysis, but there has been little research on how to make data cleaning as easy and effective as possible. This paper tackles a small, but important, component of data cleaning: data tidying. Tidy datasets are easy to manipulate, model and visualize, and have a specific structure: each variable is a column, each observation is a row, and each type of observational unit is a table. This framework makes it easy to tidy messy datasets because only a small set of tools are needed to deal with a wide range of un-tidy datasets. This structure also makes it easier to develop tidy tools for data analysis, tools that both input and output tidy datasets. The advantages of a consistent data structure and matching tools are demonstrated with a case study free from mundane data manipulation chores." (Hadley Wickham, Tidy Data, Vol. 59, Issue 10, Sep 2014, Journal of Statistical Software. http://www.jstatsoft.org/v59/i10.)
 
 Wickham's tidy data principles have become widely used in data science and other statistical software applications. 
 
-To prepare for this lab, we read Karl W. Broman and Kara H. Woo's 2018 "Data Organization in Spreadsheets" from *The American Statistician*. Article abstract: "Spreadsheets are widely used software tools for data entry, storage, analysis, and visualization. Focusing on the data entry and storage aspects, this article offers practical recommendations for organizing spreadsheet data to reduce errors and ease later analyses. The basic principles are: be consistent, write dates like YYYY-MM-DD, do not leave any cells empty, put just one thing in a cell, organize the data as a single rectangle (with subjects as rows and variables as columns, and with a single header row), create a data dictionary, do not include calculations in the raw data files, do not use font color or highlighting as data, choose good names for things, make backups, use data validation to avoid data entry errors, and save the data in plain text files." ( Karl W. Broman & Kara H. Woo (2018) Data Organization in Spreadsheets, The American Statistician, 72:1, 2-10, DOI: 10.1080/00031305.2017.1375989)
+To prepare for this lab, we read Karl W. Broman and Kara H. Woo's 2018 "Data Organization in Spreadsheets" from *The American Statistician*. 
+
+Article abstract: "Spreadsheets are widely used software tools for data entry, storage, analysis, and visualization. Focusing on the data entry and storage aspects, this article offers practical recommendations for organizing spreadsheet data to reduce errors and ease later analyses. The basic principles are: be consistent, write dates like YYYY-MM-DD, do not leave any cells empty, put just one thing in a cell, organize the data as a single rectangle (with subjects as rows and variables as columns, and with a single header row), create a data dictionary, do not include calculations in the raw data files, do not use font color or highlighting as data, choose good names for things, make backups, use data validation to avoid data entry errors, and save the data in plain text files." ( Karl W. Broman & Kara H. Woo (2018) Data Organization in Spreadsheets, The American Statistician, 72:1, 2-10, DOI: 10.1080/00031305.2017.1375989)
 
 ## What Are the Principles
 
@@ -128,7 +132,7 @@ As described in Library Carpentry's ["Tidy data for librarians" tutorial](https:
  
 ## Dealing With Messy Data
 
-1- Extract the contents of the `database_lab_data.zip` folder.
+1- Extract the contents of the `database_lab_data.zip` folder. The `zip` folder is available on P-Web.
 
 2- Open the `CSC_Database_Lab_Player_Birthplaces.csv` and `CSC_Database_Lab_TeamLocations.csv` files in a spreadsheet program.
 
@@ -176,39 +180,36 @@ As described in Library Carpentry's ["Tidy data for librarians" tutorial](https:
 
 As described in Library Carpentry's ["Introduction to OpenRefine"](https://librarycarpentry.org/lc-open-refine/01-introduction/index.html):
 
-"OpenRefine is described as 'a power tool for working with messy data' ([David Huynh](http://web.archive.org/web/20141021040915/http://davidhuynh.net/spaces/nicar2011/tutorial.pdf)) - but what does this mean? It is probably easiest to describe the kinds of data OpenRefine is good at working with and the sorts of problems it can help you solve.
+*OpenRefine is described as 'a power tool for working with messy data' ([David Huynh](http://web.archive.org/web/20141021040915/http://davidhuynh.net/spaces/nicar2011/tutorial.pdf)) - but what does this mean? It is probably easiest to describe the kinds of data OpenRefine is good at working with and the sorts of problems it can help you solve.
 
-"OpenRefine is most useful where you have data in a simple tabular format such as a spreadsheet, a comma separated values file (csv) or a tab delimited file (tsv) but with internal inconsistencies either in data formats, or where data appears, or in terminology used. OpenRefine can be used to standardize and clean data across your file. 
+*OpenRefine is most useful where you have data in a simple tabular format such as a spreadsheet, a comma separated values file (csv) or a tab delimited file (tsv) but with internal inconsistencies either in data formats, or where data appears, or in terminology used. OpenRefine can be used to standardize and clean data across your file. 
 
-"It can help you:
+*It can help you:
 - Get an overview of a data set
-- Resolve inconsistencies in a data set, for example standardizing date formatting
-- Help you split data up into more granular parts, for example splitting up cells with multiple authors into separate cells
-- Match local data up to other data sets, for example in matching local subjects against the Library of Congress Subject Headings
-- Enhance a data set with data from other sources
+- *Resolve inconsistencies in a data set, for example standardizing date formatting
+- *Help you split data up into more granular parts, for example splitting up cells with multiple authors into separate cells
+- *Match local data up to other data sets, for example in matching local subjects against the Library of Congress Subject Headings
+- *Enhance a data set with data from other sources
 
-"Some common scenarios where you might use OpenRefine include:
+*Some common scenarios where you might use OpenRefine include:
 - Where you want to know how many times a particular value (name, publisher, subject) appears in a column in your data
-- Where you want to know how values are distributed across your whole data set
-- Where you have a list of dates which are formatted in different ways, and want to change all the dates in the list to a single common date format." 
+- *Where you want to know how values are distributed across your whole data set
+- *Where you have a list of dates which are formatted in different ways, and want to change all the dates in the list to a single common date format." 
 
 #### Installing and Loading Data in OpenRefine
 
 6- Navigate to https://github.com/OpenRefine/OpenRefine/releases/ and download https://github.com/OpenRefine/OpenRefine/releases/download/3.3-rc1/openrefine-linux-3.3-rc1.tar.gz. 
-
-  a- Open the terminal, navigate to the `Downloads` folder.
-
-  b- Use the following command to install the program.
+  * a- Open the terminal, navigate to the `Downloads` folder.
+  * b- Use the following command to install the program.
 
 ```
 tar xzf openrefine-linux-2.7.tar.gz
 cd openrefine-2.7
 ./refine
 ```  
-
-  c- Substitute the relevant version and release numbers.
+  * c- Substitute the relevant version and release numbers.
   
-  d- If you are getting memory-related error messages, visit https://github.com/OpenRefine/OpenRefine/wiki/FAQ%3A-Allocate-More-Memory#linux-or-mac to troubleshoot.
+  * d- If you are getting memory-related error messages, visit https://github.com/OpenRefine/OpenRefine/wiki/FAQ%3A-Allocate-More-Memory#linux-or-mac to troubleshoot.
 
 <p align="center"><img class=" size-full wp-image-55 aligncenter" src="https://github.com/kwaldenphd/databases/blob/master/screenshots/Image_a.png?raw=true" alt="Capture_2"  /></p>
 
@@ -242,27 +243,27 @@ cd openrefine-2.7
 
 As described in Library Carpentry's ["Introduction to OpenRefine"](https://librarycarpentry.org/lc-open-refine/01-introduction/index.html):
 
-"OpenRefine displays data in a tabular format. Each row will usually represent a ‘record’ in the data, while each column represents a type of information. This is very similar to how you might view data in a spreadsheet or database. As with a spreadsheet, the individual bits of data live in ‘cells’ at the intersection of a row and a column.
+*OpenRefine displays data in a tabular format. Each row will usually represent a ‘record’ in the data, while each column represents a type of information. This is very similar to how you might view data in a spreadsheet or database. As with a spreadsheet, the individual bits of data live in ‘cells’ at the intersection of a row and a column.
 
-"OpenRefine only displays a limited number of rows of data at one time. You can adjust the number choosing between 5, 10 (the default), 25 and 50 at the top left of the table of data. You can navigate through the records by using the previous/next/first/last navigation options at the top right of the table of data."
+*OpenRefine only displays a limited number of rows of data at one time. You can adjust the number choosing between 5, 10 (the default), 25 and 50 at the top left of the table of data. You can navigate through the records by using the previous/next/first/last navigation options at the top right of the table of data.
 
 #### Faceting and Filtering
 
 As described in Library Carpentry's ["Introduction to OpenRefine"](https://librarycarpentry.org/lc-open-refine/01-introduction/index.html):
 
-"Facets are one of the most useful features of OpenRefine and can help in both getting an overview of the data and to improve the consistency of the data.
+*Facets are one of the most useful features of OpenRefine and can help in both getting an overview of the data and to improve the consistency of the data.
 
-"A ‘Facet’ groups all the values that appear in a column, and then allows you to filter the data by these values and edit values across many records at the same time.
+*A ‘Facet’ groups all the values that appear in a column, and then allows you to filter the data by these values and edit values across many records at the same time.
 
-"The simplest type of Facet is called a ‘Text facet’. This simply groups all the text values in a column and lists each value with the number of records it appears in. The facet information always appears in the left hand panel in the OpenRefine interface.
+*The simplest type of Facet is called a ‘Text facet’. This simply groups all the text values in a column and lists each value with the number of records it appears in. The facet information always appears in the left hand panel in the OpenRefine interface.
 
-"To create a Text Facet for a column, click on the drop down menu at the top of the publisher column and choose `Facet -> Text Facet`. The facet will then appear in the left hand panel.
+*To create a Text Facet for a column, click on the drop down menu at the top of the publisher column and choose `Facet -> Text Facet`. The facet will then appear in the left hand panel.
 
-"The facet consists of a list of values used in the data. You can filter the data displayed by clicking on one of these headings.
+*The facet consists of a list of values used in the data. You can filter the data displayed by clicking on one of these headings.
 
-"You can include multiple values from the facet in a filter at one time by using the `Include` option which appears when you put your mouse over a value in the Facet.
+*You can include multiple values from the facet in a filter at one time by using the `Include` option which appears when you put your mouse over a value in the Facet.
 
-"You can also invert the filter to show all records which do not match your selected values. This option appears at the top of the Facet panel when you select a value from the facet to apply as a filter."
+*You can also invert the filter to show all records which do not match your selected values. This option appears at the top of the Facet panel when you select a value from the facet to apply as a filter."
 
 <p align="center"><img class=" size-full wp-image-55 aligncenter" src="https://github.com/kwaldenphd/databases/blob/master/screenshots/Image_3.png?raw=true" alt="Capture_2"  /></p>
 
@@ -554,7 +555,7 @@ As described in Library Carpentry's [Introduction to SQL tutorial](https://libra
 
 ### Entities
 
-"A definable thing—-such as a person, object, concept or event-—that can have data stored about it. Think of entities as nouns. Examples: a customer, student, car or product." (["The components and features of an ER diagram,"](https://www.lucidchart.com/pages/er-diagrams#section_3), LucidChart)
+"A definable thing—-such as a person, object, concept or event-—that can have data stored about it. Think of entities as nouns. Examples: a customer, student, car or product." ([The components and features of an ER diagram,](https://www.lucidchart.com/pages/er-diagrams#section_3), LucidChart)
 
 <blockquote>Q13: What entities are in the Player_Birthplaces, Team_Locations, and Transactions tables? List the entitites by table and include some explanation of your thought process. If you're getting stuck, try describing the data included in each table using a sentence. Where are the nouns in each sentence?</blockquote>
 
@@ -562,7 +563,7 @@ As described in Library Carpentry's [Introduction to SQL tutorial](https://libra
 
 ### Attributes
 
-"A property or characteristic of an entity." (["The components and features of an ER diagram,"](https://www.lucidchart.com/pages/er-diagrams#section_3), LucidChart)
+"A property or characteristic of an entity." ([The components and features of an ER diagram,](https://www.lucidchart.com/pages/er-diagrams#section_3) LucidChart)
 
 <blockquote>Q14: What attributes are in the Player_Birthplaces, Team_Locations, and Transactions tables? What entities do these attributes describe? List the attributes by entity and table and include some explanation of your thought process. If you're getting stuck, go back to your list of entities from Q13. What non-entity information in each table might describe an entity?</blockquote>
 
@@ -570,7 +571,7 @@ As described in Library Carpentry's [Introduction to SQL tutorial](https://libra
 
 ### Relationships
 
-"How entities act upon each other or are associated with each other. Think of relationships as verbs. For example, the named student might register for a course. The two entities would be the student and the course, and the relationship depicted is the act of enrolling." (["The components and features of an ER diagram,"](https://www.lucidchart.com/pages/er-diagrams#section_3), LucidChart)
+"How entities act upon each other or are associated with each other. Think of relationships as verbs. For example, the named student might register for a course. The two entities would be the student and the course, and the relationship depicted is the act of enrolling." ([The components and features of an ER diagram,](https://www.lucidchart.com/pages/er-diagrams#section_3), LucidChart)
 
 <blockquote>Q15: What relationships do you see within and across entities in the Player_Birthplaces, Team_Locations, and Transactions tables? What entities do these relationships connect? Include some explanation of your thought process. If you're getting stuck, go back to your list of entities from Q13. How do these entities connect?</blockquote>
 
@@ -578,7 +579,7 @@ As described in Library Carpentry's [Introduction to SQL tutorial](https://libra
 
 ### Cardinality
 
-"Defines the numerical attributes of the relationship between two entities or entity sets." (["The components and features of an ER diagram,"](https://www.lucidchart.com/pages/er-diagrams#section_3), LucidChart)
+"Defines the numerical attributes of the relationship between two entities or entity sets." ([The components and features of an ER diagram,](https://www.lucidchart.com/pages/er-diagrams#section_3), LucidChart)
 
 86- Types of cardinality:
 
@@ -591,13 +592,13 @@ As described in Library Carpentry's [Introduction to SQL tutorial](https://libra
 
 87- The three main cardinal relationships are one-to-one, one-to-many, and many-many. A one-to-one example would be one student associated with one mailing address. A one-to-many example (or many-to-one, depending on the relationship direction): One student registers for multiple courses, but all those courses have a single line back to that one student. Many-to-many example: Students as a group are associated with multiple faculty members, and faculty members in turn are associated with multiple students.
 
-<p align="center"><img class=" size-full wp-image-55 aligncenter" src="https://github.com/kwaldenphd/databases/blob/master/screenshots/Image_30.png?raw=true" alt="Capture_2"  /></p>
+<p align="center"><img class=" size-full wp-image-55 aligncenter" src="https://github.com/kwaldenphd/databases/blob/master/screenshots/Image_30.PNG?raw=true" alt="Capture_2"  /></p>
 
 88- Cardinality is indicated through symbols added to the connecting lines of a relationship.
 
 <blockquote>Q16: Include the cardinality for the relationships you identified in Q15. Include some explanation of your thought process.</blockquote>
 
-Visit Lucidchart's ["What is an Entity Relationship Diagram (ERD)?"](https://www.lucidchart.com/pages/er-diagrams#top) to learn more about the history, components, and limits of ER Diagrams.
+Visit Lucidchart's [What is an Entity Relationship Diagram (ERD)?](https://www.lucidchart.com/pages/er-diagrams#top) to learn more about the history, components, and limits of ER Diagrams.
 
 ## Building an ERD
 
@@ -615,13 +616,13 @@ Visit Lucidchart's ["What is an Entity Relationship Diagram (ERD)?"](https://www
 
 93- These unique identifiers and matching fields are called keys.
 
-"The primary key is defined as a column (or set of columns) where each value is unique and identifies a single row of the table." (["Primary Key-Foreign Key Relationships,"](https://docs.oracle.com/cd/E12100_01/books/admintool/admintool_DataModeling4.html), Oracle)
+"The primary key is defined as a column (or set of columns) where each value is unique and identifies a single row of the table." ([Primary Key-Foreign Key Relationships,](https://docs.oracle.com/cd/E12100_01/books/admintool/admintool_DataModeling4.html), Oracle)
 
-"A foreign key is a column or a set of columns in one table that references the primary key columns in another table." (["Primary Key-Foreign Key Relationships,"](https://docs.oracle.com/cd/E12100_01/books/admintool/admintool_DataModeling4.html), Oracle)
+"A foreign key is a column or a set of columns in one table that references the primary key columns in another table." ([Primary Key-Foreign Key Relationships,](https://docs.oracle.com/cd/E12100_01/books/admintool/admintool_DataModeling4.html), Oracle)
 
-<p align="center"><img class=" size-full wp-image-55 aligncenter" src="https://github.com/kwaldenphd/databases/blob/master/screenshots/Image_31.png?raw=true" alt="Capture_2"  /></p>
+<p align="center"><img class=" size-full wp-image-55 aligncenter" src="https://github.com/kwaldenphd/databases/blob/master/screenshots/Image_31.jpg?raw=true" alt="Capture_2"  /></p>
 
-Image from ["Foreign and Primary Key Differences (Visually Explained),"](https://www.essentialsql.com/what-is-the-difference-between-a-primary-key-and-a-foreign-key/) EssentialSQL.
+Image from [Foreign and Primary Key Differences (Visually Explained),](https://www.essentialsql.com/what-is-the-difference-between-a-primary-key-and-a-foreign-key/) EssentialSQL.
 
 <blockquote>Q18: What fields in our tables are functioning as keys? Which ones are primary keys and which ones are foreign keys? Include some explanation of your thought process.</blockquote>
 
@@ -631,13 +632,13 @@ Image from ["Foreign and Primary Key Differences (Visually Explained),"](https:/
 
 95- But, we might also want to represent our database structure based on tables, primary keys, and foreign keys.
 
-96- An image from StackExchange's ["ER vs database schema diagrams" page](https://dba.stackexchange.com/questions/119380/er-vs-database-schema-diagrams) that illustrates the difference:
+96- An image from StackExchange's [ER vs database schema diagrams page](https://dba.stackexchange.com/questions/119380/er-vs-database-schema-diagrams) that illustrates the difference:
 
 <p align="center"><img class=" size-full wp-image-55 aligncenter" src="https://github.com/kwaldenphd/databases/blob/master/screenshots/Image_c.png?raw=true" alt="Capture_2"  /></p>
 
 <blockquote>Q19: Work with a colleague to build a relational schema for a relational database that includes the Player_Birthplaces, Team_Locations, and Transactions tables. Include your diagram as well as an explanation of your process.</blockquote>
 
-Visit StackOverflow's ["What is the different between ER Diagram and Database Schema?"](https://stackoverflow.com/questions/17641134/what-is-different-between-er-diagram-and-database-schema) page to learn more.
+Visit StackOverflow's [What is the different between ER Diagram and Database Schema?](https://stackoverflow.com/questions/17641134/what-is-different-between-er-diagram-and-database-schema) page to learn more.
 
 # SQL Query Syntax
 
@@ -735,7 +736,7 @@ WHERE dob>1996;
 
 <p align="center"><img class=" size-full wp-image-55 aligncenter" src="https://github.com/kwaldenphd/databases/blob/master/screenshots/Image_42.png?raw=true" alt="Capture_2"  /></p>
 
-List of operators that can be used in a `WHERE` clause (from W3Schools ["SQL Where Clause" tutorial](https://www.w3schools.com/sql/sql_where.asp)).
+List of operators that can be used in a `WHERE` clause (from W3Schools [SQL Where Clause page](https://www.w3schools.com/sql/sql_where.asp)).
 
 114- SQL query syntax requires single quotes around text values. Numeric fields do not need single quotes.
 
@@ -747,7 +748,7 @@ Learn more about operators at Beginner SQL's [Tutorial on SQL Comparison Keyword
 
 We won't cover these functions in this lab, but SQL syntax includes functions that can group query results by particular fields and perform basic arithmetic functions on values in a database.
 
-To learn more, visit Library Carpentry's ["Aggregating & calculating values" tutorial](https://librarycarpentry.org/lc-sql/04-aggregating-calculating/index.html) and W3Schools' ["SQL Tutorial"](https://www.w3schools.com/sql/default.asp) pages for specific aggregating and calculating functions.
+To learn more, visit Library Carpentry's [Aggregating & calculating values page](https://librarycarpentry.org/lc-sql/04-aggregating-calculating/index.html) and W3Schools' [SQL Tutorial](https://www.w3schools.com/sql/default.asp) pages for specific aggregating and calculating functions.
 
 ## Joins
 
@@ -755,7 +756,7 @@ To learn more, visit Library Carpentry's ["Aggregating & calculating values" tut
 
 116- We can accomplish this in SQL using `JOIN` functions.
 
-117- According to W3Schools'["SQL Joins" page](https://www.w3schools.com/sql/sql_join.asp), "A JOIN clause is used to combine rows from two or more tables, based on a related column between them."
+117- According to W3Schools'[SQL Joins page](https://www.w3schools.com/sql/sql_join.asp), "A JOIN clause is used to combine rows from two or more tables, based on a related column between them."
 
 ```SQL
 SELECT *
@@ -770,15 +771,15 @@ ON transactions.player_ids = player_birthplaces.player_ids;
 
 <blockquote>Q25: How would you write an SQL query that joins the Transactions and Team_Locations tables and returns all columns?  What data does this query return?</blockquote>
 
-<p align="center"><img class=" size-full wp-image-55 aligncenter" src="https://github.com/kwaldenphd/databases/blob/master/screenshots/Image_43.png?raw=true" alt="Capture_2"  /></p>
+<p align="center"><img class=" size-full wp-image-55 aligncenter" src="https://github.com/kwaldenphd/databases/blob/master/screenshots/Image_43.gif?raw=true" alt="Capture_2"  /></p>
 
 120- There are four main types of `JOIN` functions.
-- `(INNER) Join` returns matching records in both tables
+- `(INNER) JOIN` returns matching records in both tables
 - `LEFT (OUTER) JOIN` returns all records from the left table and only matching records from the right table
 - `RIGHT (OUTER) JOIN` returns all records from the right table and only matching records from the left table
 - `FULL (OUTER) JOIN` returns all matching records from both the left and right tables
 
-Learn more about `JOIN` functions at W3Schools' ["SQL Joins" page](https://www.w3schools.com/sql/sql_join.asp).
+Learn more about `JOIN` functions at W3Schools' [SQL Joins page](https://www.w3schools.com/sql/sql_join.asp).
 
 <blockquote>Q26: Where would you start in writing an SQL query that answers our question about the number of players born in Puerto Rico playing for teams located in Iowa?</blockquote>
 
