@@ -180,36 +180,36 @@ As described in Library Carpentry's ["Tidy data for librarians" tutorial](https:
 
 As described in Library Carpentry's ["Introduction to OpenRefine"](https://librarycarpentry.org/lc-open-refine/01-introduction/index.html):
 
-*OpenRefine is described as 'a power tool for working with messy data' ([David Huynh](http://web.archive.org/web/20141021040915/http://davidhuynh.net/spaces/nicar2011/tutorial.pdf)) - but what does this mean? It is probably easiest to describe the kinds of data OpenRefine is good at working with and the sorts of problems it can help you solve.
+<em>OpenRefine is described as 'a power tool for working with messy data' ([David Huynh](http://web.archive.org/web/20141021040915/http://davidhuynh.net/spaces/nicar2011/tutorial.pdf)) - but what does this mean? It is probably easiest to describe the kinds of data OpenRefine is good at working with and the sorts of problems it can help you solve.
 
-*OpenRefine is most useful where you have data in a simple tabular format such as a spreadsheet, a comma separated values file (csv) or a tab delimited file (tsv) but with internal inconsistencies either in data formats, or where data appears, or in terminology used. OpenRefine can be used to standardize and clean data across your file. 
+OpenRefine is most useful where you have data in a simple tabular format such as a spreadsheet, a comma separated values file (csv) or a tab delimited file (tsv) but with internal inconsistencies either in data formats, or where data appears, or in terminology used. OpenRefine can be used to standardize and clean data across your file. 
 
-*It can help you:
+It can help you:
 - Get an overview of a data set
-- *Resolve inconsistencies in a data set, for example standardizing date formatting
-- *Help you split data up into more granular parts, for example splitting up cells with multiple authors into separate cells
-- *Match local data up to other data sets, for example in matching local subjects against the Library of Congress Subject Headings
-- *Enhance a data set with data from other sources
+- Resolve inconsistencies in a data set, for example standardizing date formatting
+- Help you split data up into more granular parts, for example splitting up cells with multiple authors into separate cells
+- Match local data up to other data sets, for example in matching local subjects against the Library of Congress Subject Headings
+- Enhance a data set with data from other sources
 
-*Some common scenarios where you might use OpenRefine include:
+Some common scenarios where you might use OpenRefine include:
 - Where you want to know how many times a particular value (name, publisher, subject) appears in a column in your data
-- *Where you want to know how values are distributed across your whole data set
-- *Where you have a list of dates which are formatted in different ways, and want to change all the dates in the list to a single common date format." 
+- Where you want to know how values are distributed across your whole data set
+- Where you have a list of dates which are formatted in different ways, and want to change all the dates in the list to a single common date format."</em>
 
 #### Installing and Loading Data in OpenRefine
 
 6- Navigate to https://github.com/OpenRefine/OpenRefine/releases/ and download https://github.com/OpenRefine/OpenRefine/releases/download/3.3-rc1/openrefine-linux-3.3-rc1.tar.gz. 
-  * a- Open the terminal, navigate to the `Downloads` folder.
-  * b- Use the following command to install the program.
+  * Open the terminal, navigate to the `Downloads` folder.
+  * Use the following command to install the program.
 
 ```
 tar xzf openrefine-linux-2.7.tar.gz
 cd openrefine-2.7
 ./refine
 ```  
-  * c- Substitute the relevant version and release numbers.
+  * Substitute the relevant version and release numbers.
   
-  * d- If you are getting memory-related error messages, visit https://github.com/OpenRefine/OpenRefine/wiki/FAQ%3A-Allocate-More-Memory#linux-or-mac to troubleshoot.
+  * If you are getting memory-related error messages, visit https://github.com/OpenRefine/OpenRefine/wiki/FAQ%3A-Allocate-More-Memory#linux-or-mac to troubleshoot.
 
 <p align="center"><img class=" size-full wp-image-55 aligncenter" src="https://github.com/kwaldenphd/databases/blob/master/screenshots/Image_a.png?raw=true" alt="Capture_2"  /></p>
 
@@ -243,27 +243,27 @@ cd openrefine-2.7
 
 As described in Library Carpentry's ["Introduction to OpenRefine"](https://librarycarpentry.org/lc-open-refine/01-introduction/index.html):
 
-*OpenRefine displays data in a tabular format. Each row will usually represent a ‘record’ in the data, while each column represents a type of information. This is very similar to how you might view data in a spreadsheet or database. As with a spreadsheet, the individual bits of data live in ‘cells’ at the intersection of a row and a column.
+<em>"OpenRefine displays data in a tabular format. Each row will usually represent a ‘record’ in the data, while each column represents a type of information. This is very similar to how you might view data in a spreadsheet or database. As with a spreadsheet, the individual bits of data live in ‘cells’ at the intersection of a row and a column.
 
-*OpenRefine only displays a limited number of rows of data at one time. You can adjust the number choosing between 5, 10 (the default), 25 and 50 at the top left of the table of data. You can navigate through the records by using the previous/next/first/last navigation options at the top right of the table of data.
+OpenRefine only displays a limited number of rows of data at one time. You can adjust the number choosing between 5, 10 (the default), 25 and 50 at the top left of the table of data. You can navigate through the records by using the previous/next/first/last navigation options at the top right of the table of data."</em>
 
 #### Faceting and Filtering
 
 As described in Library Carpentry's ["Introduction to OpenRefine"](https://librarycarpentry.org/lc-open-refine/01-introduction/index.html):
 
-*Facets are one of the most useful features of OpenRefine and can help in both getting an overview of the data and to improve the consistency of the data.
+<em>Facets are one of the most useful features of OpenRefine and can help in both getting an overview of the data and to improve the consistency of the data.
 
-*A ‘Facet’ groups all the values that appear in a column, and then allows you to filter the data by these values and edit values across many records at the same time.
+A ‘Facet’ groups all the values that appear in a column, and then allows you to filter the data by these values and edit values across many records at the same time.
 
-*The simplest type of Facet is called a ‘Text facet’. This simply groups all the text values in a column and lists each value with the number of records it appears in. The facet information always appears in the left hand panel in the OpenRefine interface.
+The simplest type of Facet is called a ‘Text facet’. This simply groups all the text values in a column and lists each value with the number of records it appears in. The facet information always appears in the left hand panel in the OpenRefine interface.
 
-*To create a Text Facet for a column, click on the drop down menu at the top of the publisher column and choose `Facet -> Text Facet`. The facet will then appear in the left hand panel.
+To create a Text Facet for a column, click on the drop down menu at the top of the publisher column and choose `Facet -> Text Facet`. The facet will then appear in the left hand panel.
 
-*The facet consists of a list of values used in the data. You can filter the data displayed by clicking on one of these headings.
+The facet consists of a list of values used in the data. You can filter the data displayed by clicking on one of these headings.
 
-*You can include multiple values from the facet in a filter at one time by using the `Include` option which appears when you put your mouse over a value in the Facet.
+You can include multiple values from the facet in a filter at one time by using the `Include` option which appears when you put your mouse over a value in the Facet.
 
-*You can also invert the filter to show all records which do not match your selected values. This option appears at the top of the Facet panel when you select a value from the facet to apply as a filter."
+You can also invert the filter to show all records which do not match your selected values. This option appears at the top of the Facet panel when you select a value from the facet to apply as a filter."</em>
 
 <p align="center"><img class=" size-full wp-image-55 aligncenter" src="https://github.com/kwaldenphd/databases/blob/master/screenshots/Image_3.png?raw=true" alt="Capture_2"  /></p>
 
@@ -377,7 +377,7 @@ We are going to go through a process in Microsoft Excel where we load our indivi
 
 50- Select all the cells that contain data.
 
-<blockquote>One shortcut is to select cell A1, then press <Control> <Shift> and the right arrow key to select all columns with data. Then <Control> <Shift> and the down arrow key to select all rows with data.</blockquote>
+<blockquote>One shortcut is to select cell A1, then press Control Shift and the right arrow key to select all columns with data. Then Control Shift and the down arrow key to select all rows with data.</blockquote>
  
 <p align="center"><img class=" size-full wp-image-55 aligncenter" src="https://github.com/kwaldenphd/databases/blob/master/screenshots/Image_15.png?raw=true" alt="Capture_2"  /></p>
  
@@ -461,7 +461,7 @@ One option is use a survey with some pre-defined choices or drop-down options.
 
 67- Explore the different question types. 
 
-<blockquote>Q10: Describe how you would go about building a survey form or template for the <code>`CSC_Database_Lab_PlayerBirthplaces.csv`</code> file. You DO NOT need to actually create or submit a survey form. Describe what types of questions and pre-defined question or field options could you use to more effectively generate the data in this file.</blockquote>
+<blockquote>Q10: Describe how you would go about building a survey form or template for the <code>CSC_Database_Lab_PlayerBirthplaces.csv</code> file. You DO NOT need to actually create or submit a survey form. Describe what types of questions and pre-defined question or field options could you use to more effectively generate the data in this file.</blockquote>
 
 ## Data Validation
 
@@ -481,7 +481,7 @@ One option is use a survey with some pre-defined choices or drop-down options.
 
 Visit Microsoft Office's ["Apply data validation to cells"](https://support.office.com/en-us/article/apply-data-validation-to-cells-29fecbcc-d1b9-42c1-9d76-eff3ce5f7249) article to learn more about data validation options.
 
-<blockquote>Q11: Describe how you would go about using data validation to build a template for the <code>`CSC_Database_Lab_PlayerBirthplaces.csv`</code> file. You DO NOT need to actually create or submit a template. Describe what data validation options and pre-defined field options could you use to more effectively generate the data in this file.</blockquote>
+<blockquote>Q11: Describe how you would go about using data validation to build a template for the <code>CSC_Database_Lab_PlayerBirthplaces.csv</code> file. You DO NOT need to actually create or submit a template. Describe what data validation options and pre-defined field options could you use to more effectively generate the data in this file.</blockquote>
 
 # Understanding Relational Databases
 
