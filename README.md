@@ -88,11 +88,11 @@ Designing spreadsheets that are “tidy, consistent, and as resistant to mistake
   * “This is part of the metadata that you will want to prepare: information about the data” (6)
   * You might also find this information in a codebook that goes with a dataset
   * Things to include:
-    a- The exact variable name as in the data file
-    b- A version of the variable name that might be used in data visualizations
-    c- A longer explanation of what the variable means
-    d- The measurement units
-    e- Expected minimum and maximum values
+    * The exact variable name as in the data file
+    * A version of the variable name that might be used in data visualizations
+    * A longer explanation of what the variable means
+    * The measurement units
+    * Expected minimum and maximum values
 
 8- No Calculations in the Raw Data Files
 
