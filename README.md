@@ -451,7 +451,7 @@ One option is use a survey with some pre-defined choices or drop-down options.
 
 <p align="center"><img class=" size-full wp-image-55 aligncenter" src="https://github.com/kwaldenphd/databases/blob/master/screenshots/Image_24.png?raw=true" alt="Capture_2"  /></p>
 
-64- Log into your Grinnell OFfice 365 account.
+64- Log into your UIowa OFfice 365 account.
 
 <p align="center"><img class=" size-full wp-image-55 aligncenter" src="https://github.com/kwaldenphd/databases/blob/master/screenshots/Image_25.png?raw=true" alt="Capture_2"  /></p>
 
@@ -584,11 +584,11 @@ As described in Library Carpentry's [Introduction to SQL tutorial](https://libra
 86- Types of cardinality:
 
 - One-to-one relationships
-  * For example each Grinnell student has a unique ID number.
+  * For example each UIowa student has a unique ID number.
 - One-to-many relationships
-  * A single Grinnell student registers for multiple courses.
+  * A single UIowa student registers for multiple courses.
 - Many-to-many relationships
-  * Multiple Grinnell students work with multiple faculty members, and multiple faculty members work with multiple students.
+  * Multiple UIowa students work with multiple faculty members, and multiple faculty members work with multiple students.
 
 87- The three main cardinal relationships are one-to-one, one-to-many, and many-many. A one-to-one example would be one student associated with one mailing address. A one-to-many example (or many-to-one, depending on the relationship direction): One student registers for multiple courses, but all those courses have a single line back to that one student. Many-to-many example: Students as a group are associated with multiple faculty members, and faculty members in turn are associated with multiple students.
 
